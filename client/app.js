@@ -1,25 +1,5 @@
 Template.messages.helpers({
-    messages: Messages.find({})
-});
-
-Template.footer.events({
-    'keypress input': function(event) {
-        var inputVal = $('.input-box_text').val();
-
-        if( !!inputVal ){
-            var charCode = (typeof event.which == "number") ? event.which : event.keyCode;
-            if( charCode == 13) {
-                event.stopPropagation();
-                Messages.insert({
-                    text: $('.input-box_text').val(),
-                    user: Meteor.userId(),
-                    timestamp: Date.now()
-                });
-                $('.input-box_text').val("");
-                // return false;
-            }
-        }
-    }
+    messages: Messages.find()
 });
 
 Template.registerHelper("usernameFromId", function(userId){
@@ -39,5 +19,24 @@ Template.registerHelper("timestampToTime", function(timestamp){
     return hours + ':' + minutes.substr(minutes.length-2) + ':' + seconds.substr(seconds.length-2);
 });
 
-Meteor.subscribe('messages');
-Meteor.subscribe('allUsernames');
+Template.listings.helpers({
+    channels: function() {
+        return Channels.find();
+    }
+});
+
+Template.channel.events({
+    'click .channel': function (e){
+        Session.set('channel', this.name);
+    }
+});
+
+Template.channel.helpers({
+    active: function(){
+        if( Session.get('channel') === this.name ){
+            return 'active';
+        } else {
+            return '';
+        }
+    }
+});
