@@ -10,7 +10,6 @@ accounts-base
 accounts-password
 accounts-ui
 accounts-github
-standard-minifiers
 meteor-base
 mobile-experience
 mongo
@@ -25,3 +24,8 @@ ejson
 spacebars
 check
 iron:router
+flemay:less-autoprefixer
+http
+standard-minifier-css
+standard-minifier-js
+twbs:bootstrap
