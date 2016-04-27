@@ -28,4 +28,4 @@ flemay:less-autoprefixer
 http
 standard-minifier-css
 standard-minifier-js
-twbs:bootstrap
+huttonr:bootstrap3
