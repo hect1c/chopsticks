@@ -1,0 +1,10 @@
+<template name="sidebar">
+    <div class="row">
+        <h2 class="">Channels</h2>
+        <ul class="">
+            {{#each channels}}
+                {{> channel name=name}}
+            {{/each}}
+        </ul>
+    </div>
+</template>

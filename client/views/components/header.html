@@ -1,11 +1,17 @@
 <template name="header">
-    <div class="ui">
-        <div class="">Chopsticks</div>
-        <div class="">
-            <span class="">
-                <span class="">#</span>
-                {{currentChannel}}
-            </span>
+    <div id="header-nav" role="navigation" class="navbar navbar-default navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="col-lg-1">
+                Chopsticks
+            </div>
+            <div id="channel-header" class="navbar-collapse collapse">
+                <div class="nav navbar-nav navbar-left">
+                    <span class="">#</span>{{currentChannel}}
+                </div>
+                <div id="account-menu" class="nav navbar-nav navbar-right">
+                    <div class="">{{> loginButtons align="right"}}</div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
